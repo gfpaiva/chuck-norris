@@ -1,0 +1,12 @@
+@import '../../Scss/root';
+
+.card {
+  @include shadow;
+  background-color: $neutral-color;
+  border-radius: $border-radius;
+  padding: 2rem;
+
+  &--hover {
+    @include hover-shadow;
+  }
+}

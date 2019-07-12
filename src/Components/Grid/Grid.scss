@@ -1,0 +1,10 @@
+@import '../../Scss/root';
+
+.grid {
+  @media screen and (max-width: $sm-beakpoint) { grid-template-columns: repeat(2, 1fr) }
+  @media screen and (max-width: $xs-beakpoint) { grid-template-columns: 1fr }
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1rem;
+}

@@ -1,0 +1,26 @@
+language: node_js
+node_js:
+- '10'
+branches:
+  only:
+  - master
+cache:
+  directories:
+  - node_modules
+install:
+- npm install
+script:
+- npm run lint
+- npm run test
+- npm run test:coverage
+- npm run build:prod
+
+before_deploy:
+  - npm install netlify-cli -g
+
+deploy:
+  provider: script
+  script: netlify deploy --site $NETLIFY_SITE_ID --dir ./build --message "[TravisCI] - $TRAVIS_COMMIT_MESSAGE" --prod
+  skip_cleanup: true
+  on:
+    branch: master

@@ -1,0 +1,16 @@
+@import '../../Scss/root';
+
+.home {
+  &__category {
+    &-icon {
+      @include rfs($fs-big);
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+
+    &-name {
+      @include rfs($fs-medium);
+      font-weight: 100;
+    }
+  }
+}

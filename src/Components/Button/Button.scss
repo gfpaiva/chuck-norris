@@ -1,0 +1,19 @@
+@import '../../Scss/root';
+
+.button {
+	@media screen and (max-width: $sm-beakpoint) { width: 100% }
+  @include rfs(22);
+  @include hover-shadow();
+	border: none;
+	cursor: pointer;
+  display: inline-block;
+  font-weight: 100;
+	padding: .25em 2em;
+	outline: none;
+  text-transform: uppercase;
+
+  &--small {
+    width: auto!important;
+    padding: .25em .5em;
+  }
+}

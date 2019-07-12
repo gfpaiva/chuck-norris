@@ -1,0 +1,35 @@
+@import './Scss/fonts',
+		'./Scss/root',
+    '~normalize.css/normalize.css',
+    '~animate.css/animate.css',
+		'./Scss/helpers';
+
+
+html,
+body {
+	background-image: linear-gradient(120deg, $secondary-color 0%, $primary-color 100%);
+	color: $text-color;
+	font-family: $fontFamily;
+}
+
+*,
+:after,
+:before { box-sizing: border-box }
+
+::selection {
+	background: #000;
+	color: #fff;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+
+	&.linked { text-decoration: underline }
+}
+
+.container {
+	margin: 0 auto;
+	max-width: $container;
+	width: 90%;
+}
