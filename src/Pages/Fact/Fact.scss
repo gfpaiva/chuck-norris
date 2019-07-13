@@ -1,0 +1,23 @@
+@import '../../Scss/root';
+
+.fact {
+  &__back,
+  &__refresh {
+    @include rfs($fs-medium);
+    display: inline-block;
+    transition: transform .5s ease;
+  }
+  &__back {
+    &:hover { transform: translateX(-30%); }
+  }
+
+  &__refresh {
+    &:hover { transform: rotate(-90deg) }
+  }
+
+  &__quote {
+    @include rfs($fs-big);
+    font-weight: 100;
+    font-style: italic;
+  }
+}

@@ -1,0 +1,21 @@
+@import '../../Scss/root';
+
+.category-grid {
+  &__item {
+    transition: transform .25s ease;
+
+    &--active { background-color: $success-color }
+    &:hover { transform: scale(1.05) }
+  }
+
+  &__icon {
+    @include rfs($fs-big);
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+
+  &__name {
+    @include rfs($fs-medium);
+    font-weight: 100;
+  }
+}

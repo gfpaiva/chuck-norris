@@ -1,6 +1,7 @@
 import {
   Home,
   NotFound,
+  Fact,
 } from '../Pages';
 
 const Routes = [
@@ -9,6 +10,12 @@ const Routes = [
     path: '/',
     component: Home,
     key: 'home',
+  },
+  {
+    exact: true,
+    path: '/category/:category',
+    component: Fact,
+    key: 'fact',
   },
   {
     exact: true,

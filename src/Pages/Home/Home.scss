@@ -1,16 +1,12 @@
 @import '../../Scss/root';
 
 .home {
-  &__category {
-    &-icon {
-      @include rfs($fs-big);
-      display: inline-block;
-      margin-bottom: 1rem;
-    }
-
-    &-name {
-      @include rfs($fs-medium);
-      font-weight: 100;
+  &__welcome {
+    &-title {
+      @include shadow();
+      margin: -30px auto 3rem;
+      transform: skewY(-10deg);
+      max-width: 500px;
     }
   }
 }
