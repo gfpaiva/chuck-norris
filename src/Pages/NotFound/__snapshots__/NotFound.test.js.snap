@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NotFound /> should mount properly 1`] = `
+<NotFound>
+  <h3
+    className="text-center"
+  >
+    Página não encontrada
+    <span
+      aria-label="Neutral Face"
+      role="img"
+    >
+      😐
+    </span>
+  </h3>
+</NotFound>
+`;
