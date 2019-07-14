@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Fact /> should mount properly 1`] = `
+<Fact
+  match={
+    Object {
+      "params": Object {
+        "category": "dev",
+      },
+    }
+  }
+>
+  <div
+    className="fact"
+  >
+    <Link
+      className="fact__back"
+      to="/"
+    >
+      <a
+        className="fact__back"
+        href="/"
+        onClick={[Function]}
+      >
+        <FaArrowLeft>
+          <IconBase
+            attr={
+              Object {
+                "viewBox": "0 0 448 512",
+              }
+            }
+          >
+            <svg
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              strokeWidth="0"
+              style={
+                Object {
+                  "color": undefined,
+                }
+              }
+              viewBox="0 0 448 512"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z"
+                key="0"
+              />
+            </svg>
+          </IconBase>
+        </FaArrowLeft>
+      </a>
+    </Link>
+    <div
+      className="text-center"
+    >
+      <Spinner
+        fadeIn="full"
+        name="ball-pulse-sync"
+        noFadeIn={false}
+        overrideSpinnerClassName=""
+      >
+        <div
+          className="sk-fade-in sk-spinner ball-pulse-sync"
+        >
+          <div
+            key="0"
+          />
+          <div
+            key="1"
+          />
+          <div
+            key="2"
+          />
+        </div>
+      </Spinner>
+    </div>
+    <div
+      className="fact__categories"
+    >
+      <p
+        className="my-4"
+      >
+        Navegue por outra categoria: 
+      </p>
+      <CategoryGrid
+        active="dev"
+      >
+        <div
+          className="category-grid"
+        />
+      </CategoryGrid>
+    </div>
+  </div>
+</Fact>
+`;

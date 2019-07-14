@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Grid /> should mount with children properly 1`] = `
+<Grid
+  items={Array []}
+>
+  <div
+    className="grid"
+  >
+    <p>
+      Test
+    </p>
+  </div>
+</Grid>
+`;
+
+exports[`<Grid /> should mount with item prop properly 1`] = `
+<Grid
+  items={
+    Array [
+      "Test",
+    ]
+  }
+>
+  <div
+    className="grid"
+  >
+    <Card
+      className=""
+      hover={false}
+      href=""
+      key="0"
+    >
+      <div
+        className="card"
+      >
+        Test
+      </div>
+    </Card>
+  </div>
+</Grid>
+`;

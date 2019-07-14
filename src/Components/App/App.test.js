@@ -1,4 +1,5 @@
 import React from 'react';
+import wait from 'waait';
 import { mount } from 'enzyme';
 import { BrowserRouter as Router } from 'react-router-dom';
 
@@ -20,9 +21,13 @@ describe('<App />', () => {
       </AppProvider>
     );
 
+    // Before get fetch data (loading state)
+    expect(wrapper.find('App')).toMatchSnapshot();
+
     await wait();
     wrapper.update();
 
-    expect(wrapper.find('app')).toMatchSnapshot();
+    // Full load
+    expect(wrapper.find('App')).toMatchSnapshot();
   })
 });

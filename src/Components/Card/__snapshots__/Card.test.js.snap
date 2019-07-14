@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Card /> should mount class variations properly 1`] = `
+<Card
+  className="test"
+  hover={true}
+  href=""
+>
+  <div
+    className="card card--hover test"
+  >
+    Test
+  </div>
+</Card>
+`;
+
+exports[`<Card /> should mount link properly 1`] = `
+<Card
+  className=""
+  hover={false}
+  href="/"
+>
+  <Link
+    className="card"
+    to="/"
+  >
+    <a
+      className="card"
+      href="/"
+      onClick={[Function]}
+    >
+      Test
+    </a>
+  </Link>
+</Card>
+`;
+
+exports[`<Card /> should mount properly 1`] = `
+<Card
+  className=""
+  hover={false}
+  href=""
+>
+  <div
+    className="card"
+  >
+    Test
+  </div>
+</Card>
+`;

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { FaArrowLeft, FaUndo } from 'react-icons/fa';
 
 import Card from '../../Components/Card';
-import CategoryGrid from '../../Components/CategoryGid';
+import CategoryGrid from '../../Components/CategoryGrid';
 
 import { getJoke } from '../../Utils/API';
 import { getCategory } from '../../Utils/Categories';

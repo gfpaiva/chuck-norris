@@ -1,6 +1,6 @@
 import React from 'react';
 
-import CategoryGrid from '../../Components/CategoryGid';
+import CategoryGrid from '../../Components/CategoryGrid';
 
 import chuck from './chuck-norris-welcome.png';
 

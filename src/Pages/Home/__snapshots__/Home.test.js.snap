@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Home /> should mount properly 1`] = `
+<div
+  className="home"
+>
+  <div
+    className="home__welcome text-center"
+  >
+    <img
+      alt="Chuck Norris"
+      className="home__welcome-image full-width"
+      src="test-file-stub"
+      title="Chuck Norris"
+    />
+    <h1
+      className="home__welcome-title bg-secondary py-1"
+    >
+      <span>
+        Chuck Facts
+      </span>
+    </h1>
+    <p
+      className="home__welcome-text"
+    >
+      Selecione uma das categorias abaixo para "Chuck Facts"
+    </p>
+  </div>
+  <CategoryGrid
+    active=""
+  />
+</div>
+`;
