@@ -1,4 +1,4 @@
-# IDDogs #
+# Chuck Norris Facts #
 
 [![Build Status](https://travis-ci.org/gfpaiva/chuck-norris.svg?branch=master)](https://travis-ci.org/gfpaiva/chuck-norris) [![Coverage Status](https://coveralls.io/repos/github/gfpaiva/chuck-norris/badge.svg?branch=master)](https://coveralls.io/github/gfpaiva/chuck-norris?branch=master)
 
