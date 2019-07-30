@@ -1,16 +1,21 @@
-import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import Spinner from 'react-spinkit';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { Route, Switch } from 'react-router-dom';
+
+import FactActions from '../../Store/facts/actions';
 
 import Footer from '../Footer';
 import Routes from '../../Utils/Routes';
 
-import { useAppContext } from '../../Providers/App.Context';
-
 import './App.scss';
 
-export default function App() {
-  const { loading } = useAppContext();
+function App({ loading, loadCategoriesRequest }) {
+  useEffect(() => {
+    loadCategoriesRequest();
+  }, []);
 
   if (loading) {
     return (
@@ -33,3 +38,13 @@ export default function App() {
     </main>
   );
 }
+
+App.propTypes = {
+  loading: PropTypes.bool.isRequired,
+  loadCategoriesRequest: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = ({ facts }) => ({ loading: facts.loading });
+const mapDispatchToProps = dispatch => bindActionCreators(FactActions, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

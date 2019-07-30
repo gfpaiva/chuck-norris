@@ -72,10 +72,14 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-icons": "^3.7.0",
+    "react-redux": "^7.1.0",
     "react-router": "^5.0.1",
     "react-router-dom": "^5.0.1",
     "react-spinkit": "^3.0.0",
     "react-transition-group": "^4.2.1",
+    "redux": "^4.0.4",
+    "redux-actions": "^2.6.5",
+    "redux-saga": "^1.0.5",
     "rfs": "^8.0.4"
   }
 }
