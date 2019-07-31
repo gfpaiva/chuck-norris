@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Route, Switch } from 'react-router-dom';
 
-import FactActions from '../../Store/facts/actions';
+import CategoriesActions from '../../Store/categories/actions';
 
 import Footer from '../Footer';
 import Routes from '../../Utils/Routes';
@@ -44,7 +44,7 @@ App.propTypes = {
   loadCategoriesRequest: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = ({ facts }) => ({ loading: facts.loading });
-const mapDispatchToProps = dispatch => bindActionCreators(FactActions, dispatch);
+const mapStateToProps = ({ categories }) => ({ loading: categories.loading });
+const mapDispatchToProps = dispatch => bindActionCreators(CategoriesActions, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

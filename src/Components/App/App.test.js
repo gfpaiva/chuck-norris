@@ -1,9 +1,11 @@
 import React from 'react';
 import wait from 'waait';
+import { Provider } from 'react-redux';
 import { mount } from 'enzyme';
 import { BrowserRouter as Router } from 'react-router-dom';
 
-import AppProvider from '../../Providers/App.Context';
+import store from '../../Store';
+
 import App from './index';
 
 import getCategories from '../../../__mocks__/getCategories';
@@ -14,11 +16,11 @@ describe('<App />', () => {
       .once(JSON.stringify(getCategories));
 
     const wrapper = mount(
-      <AppProvider>
+      <Provider store={store}>
         <Router>
           <App />
         </Router>
-      </AppProvider>
+      </Provider>
     );
 
     // Before get fetch data (loading state)

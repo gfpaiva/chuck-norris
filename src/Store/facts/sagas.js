@@ -1,15 +1,15 @@
 import { call, put } from 'redux-saga/effects';
 
-import { getCategories } from '../../Utils/API';
+import { getJoke } from '../../Utils/API';
 
 import FactsActions from './actions';
 
-export default function* load() {
+export default function* loadFacts(action) {
   try {
-    const response = yield call(getCategories);
+    const { value } = yield call(getJoke, action.payload.category);
 
-    yield put(FactsActions.loadCategoriesSuccess(response));
+    yield put(FactsActions.loadFactsSuccess(value));
   } catch (err) {
-    yield put(FactsActions.loadCategoriesFail());
+    yield put(FactsActions.loadFactsFail());
   }
 }

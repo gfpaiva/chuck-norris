@@ -1,9 +1,11 @@
 import React from 'react';
 import wait from 'waait';
+import { Provider } from 'react-redux';
 import { mount } from 'enzyme';
 import { MemoryRouter } from 'react-router-dom';
 
-import AppProvider from '../../Providers/App.Context';
+import store from '../../Store';
+
 import Fact from './index';
 
 import getCategories from '../../../__mocks__/getCategories';
@@ -16,11 +18,11 @@ describe('<Fact />', () => {
       .once(JSON.stringify(getCategories));
 
     const wrapper = mount(
-      <AppProvider>
+      <Provider store={store}>
         <MemoryRouter initialEntries={[{ pathname: '/category/dev' }]}>
           <Fact match={{ params: { category: 'dev' } }} />
         </MemoryRouter>
-      </AppProvider>
+      </Provider>
     );
 
     // Loading state
@@ -39,11 +41,11 @@ describe('<Fact />', () => {
       .once(JSON.stringify(getOtherJoke));
 
     const wrapper = mount(
-      <AppProvider>
+      <Provider store={store}>
         <MemoryRouter initialEntries={[{ pathname: '/category/dev' }]}>
           <Fact match={{ params: { category: 'dev' } }} />
         </MemoryRouter>
-      </AppProvider>
+      </Provider>
     );
 
     await wait();

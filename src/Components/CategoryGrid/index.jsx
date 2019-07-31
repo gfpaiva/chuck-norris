@@ -49,6 +49,6 @@ CategoryGrid.propTypes = {
   categories: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
-const mapStateToProps = ({ facts: { categories } }) => ({ categories });
+const mapStateToProps = ({ categories: { categories } }) => ({ categories });
 
 export default connect(mapStateToProps)(CategoryGrid);

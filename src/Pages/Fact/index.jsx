@@ -1,47 +1,33 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Spinner from 'react-spinkit';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { Link } from 'react-router-dom';
 import { FaArrowLeft, FaUndo } from 'react-icons/fa';
+
+import FactsActions from '../../Store/facts/actions';
 
 import Card from '../../Components/Card';
 import CategoryGrid from '../../Components/CategoryGrid';
 
-import { getJoke } from '../../Utils/API';
 import { getCategory } from '../../Utils/Categories';
 
 import './Fact.scss';
 
 let detailCategory;
 
-export default function Fact({ match: { params: { category } } }) {
-  const [fact, setFact] = useState('');
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
-  const fetchJoke = async () => {
-    setLoading(true);
+function Fact({ match: { params: { category } }, loadFactsRequest, facts }) {
+  const { fact, loading, error } = facts;
 
-    try {
-      const { value } = await getJoke(category);
-
-      setFact(value);
-    } catch {
-      setError(true);
-
-      throw new Error('Error on fetch categories');
-    } finally {
-      setLoading(false);
-    }
-  };
   const handleRefresh = (e) => {
     e.preventDefault();
-    fetchJoke();
+    loadFactsRequest(category);
   };
 
   useEffect(() => {
-    setError(false);
+    loadFactsRequest(category);
     detailCategory = getCategory(category) ? getCategory(category) : { content: category, icon: '' };
-    fetchJoke();
     window.scrollTo(0, 0);
   }, [category]);
 
@@ -113,4 +99,15 @@ Fact.propTypes = {
       category: PropTypes.string.isRequired,
     }).isRequired,
   }).isRequired,
+  loadFactsRequest: PropTypes.func.isRequired,
+  facts: PropTypes.shape({
+    fact: PropTypes.string,
+    loading: PropTypes.bool,
+    error: PropTypes.bool,
+  }).isRequired,
 };
+
+const mapStateToProps = ({ facts }) => ({ facts });
+const mapDispatchToProps = dispatch => bindActionCreators(FactsActions, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(Fact);

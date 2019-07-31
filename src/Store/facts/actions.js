@@ -1,7 +1,7 @@
 import { createActions } from 'redux-actions';
 
 export default createActions({
-  LOAD_CATEGORIES_REQUEST: null,
-  LOAD_CATEGORIES_FAIL: null,
-  LOAD_CATEGORIES_SUCCESS: (data = []) => ({ data }),
+  LOAD_FACTS_REQUEST: category => ({ category }),
+  LOAD_FACTS_FAIL: null,
+  LOAD_FACTS_SUCCESS: (data = []) => ({ data }),
 });

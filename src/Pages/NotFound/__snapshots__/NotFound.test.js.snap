@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<NotFound /> should mount properly 1`] = `
-<NotFound>
+<Memo(NotFound)>
   <h3
     className="text-center"
   >
@@ -13,5 +13,5 @@ exports[`<NotFound /> should mount properly 1`] = `
       😐
     </span>
   </h3>
-</NotFound>
+</Memo(NotFound)>
 `;

@@ -1,30 +1,30 @@
 import { handleActions } from 'redux-actions';
 
-import FactsActions from './actions';
+import CategoriesActions from './actions';
 
 const INITIAL_STATE = {
-  fact: '',
+  categories: [],
   error: false,
   loading: true,
 };
 
 export default handleActions(
   {
-    [FactsActions.loadFactsRequest]: state => ({
+    [CategoriesActions.loadCategoriesRequest]: state => ({
       ...state,
       loading: true,
     }),
 
-    [FactsActions.loadFactsFail]: state => ({
+    [CategoriesActions.loadCategoriesFail]: state => ({
       ...state,
-      fact: '',
+      categories: [],
       error: true,
       loading: false,
     }),
 
-    [FactsActions.loadFactsSuccess]: (state, action) => ({
+    [CategoriesActions.loadCategoriesSuccess]: (state, action) => ({
       ...state,
-      fact: action.payload.data,
+      categories: action.payload.data,
       error: false,
       loading: false,
     }),
