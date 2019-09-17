@@ -8,7 +8,7 @@
     "start": "cross-env NODE_ENV=development webpack-dev-server",
     "test": "jest --watch",
     "test:ci": "jest --silent",
-    "test:coverage": "npm run test -- --coverage && cat ./coverage/lcov.info | coveralls",
+    "test:coverage": "npm run test:ci -- --coverage && cat ./coverage/lcov.info | coveralls",
     "lint": "eslint \"./src/**/*.js\" \"./src/**/*.jsx\""
   },
   "keywords": [
