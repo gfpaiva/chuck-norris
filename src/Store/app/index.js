@@ -13,6 +13,5 @@ export default handleActions(
       loading: action.payload.loading,
     }),
   },
-
   INITIAL_STATE,
 );
