@@ -15,8 +15,6 @@ import { getCategory } from '../../Utils/Categories';
 
 import './Fact.scss';
 
-let detailCategory;
-
 function Fact({
   match: { params: { category } },
   loadFactsRequest,
@@ -24,6 +22,7 @@ function Fact({
   facts,
   loading,
 }) {
+  let detailCategory = getCategory(category);
   const { fact, error } = facts;
 
   const handleRefresh = (e) => {
@@ -33,7 +32,7 @@ function Fact({
 
   useEffect(() => {
     loadFactsRequest(category);
-    detailCategory = getCategory(category) ? getCategory(category) : { content: category, icon: '' };
+    detailCategory = getCategory(category);
     window.scrollTo(0, 0);
   }, [category]);
 

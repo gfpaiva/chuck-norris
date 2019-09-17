@@ -18,6 +18,7 @@ export default function Home() {
 
         <p className="home__welcome-text">Selecione uma das categorias abaixo para &quot;Chuck Facts&quot;</p>
       </div>
+
       <CategoryGrid />
     </div>
   );

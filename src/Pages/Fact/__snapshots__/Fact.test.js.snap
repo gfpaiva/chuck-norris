@@ -6,12 +6,13 @@ exports[`<Fact /> should mount properly 1`] = `
     Object {
       "error": false,
       "fact": "",
-      "loading": true,
     }
   }
+  factsClear={[Function]}
   loadFactsFail={[Function]}
   loadFactsRequest={[Function]}
   loadFactsSuccess={[Function]}
+  loading={true}
   match={
     Object {
       "params": Object {

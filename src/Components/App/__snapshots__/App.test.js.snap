@@ -2,6 +2,7 @@
 
 exports[`<App /> should mount properly 1`] = `
 <App
+  categories={Array []}
   loadCategoriesFail={[Function]}
   loadCategoriesRequest={[Function]}
   loadCategoriesSuccess={[Function]}
@@ -36,6 +37,26 @@ exports[`<App /> should mount properly 1`] = `
 
 exports[`<App /> should mount properly 2`] = `
 <App
+  categories={
+    Array [
+      "animal",
+      "career",
+      "celebrity",
+      "dev",
+      "explicit",
+      "fashion",
+      "food",
+      "history",
+      "money",
+      "movie",
+      "music",
+      "political",
+      "religion",
+      "science",
+      "sport",
+      "travel",
+    ]
+  }
   loadCategoriesFail={[Function]}
   loadCategoriesRequest={[Function]}
   loadCategoriesSuccess={[Function]}

@@ -3,11 +3,503 @@
 exports[`<CategoryGrid /> should mount properly 1`] = `
 <CategoryGrid
   active=""
-  categories={Array []}
+  categories={
+    Array [
+      "animal",
+      "career",
+      "celebrity",
+      "dev",
+      "explicit",
+      "fashion",
+      "food",
+      "history",
+      "money",
+      "movie",
+      "music",
+      "political",
+      "religion",
+      "science",
+      "sport",
+      "travel",
+    ]
+  }
   dispatch={[Function]}
 >
   <div
     className="category-grid"
-  />
+  >
+    <Grid
+      items={Array []}
+    >
+      <div
+        className="grid"
+      >
+        <Card
+          className="category-grid__item text-center px-0 py-4"
+          hover={true}
+          href="/category/animal"
+          key="ANIMAL"
+        >
+          <Link
+            className="card card--hover category-grid__item text-center px-0 py-4"
+            to="/category/animal"
+          >
+            <a
+              className="card card--hover category-grid__item text-center px-0 py-4"
+              href="/category/animal"
+              onClick={[Function]}
+            >
+              <span
+                className="category-grid__icon"
+              >
+                🐵
+              </span>
+              <br />
+              <span
+                className="category-grid__name"
+              >
+                ANIMAL
+              </span>
+            </a>
+          </Link>
+        </Card>
+        <Card
+          className="category-grid__item text-center px-0 py-4"
+          hover={true}
+          href="/category/career"
+          key="CAREER"
+        >
+          <Link
+            className="card card--hover category-grid__item text-center px-0 py-4"
+            to="/category/career"
+          >
+            <a
+              className="card card--hover category-grid__item text-center px-0 py-4"
+              href="/category/career"
+              onClick={[Function]}
+            >
+              <span
+                className="category-grid__icon"
+              >
+                👨‍💼
+              </span>
+              <br />
+              <span
+                className="category-grid__name"
+              >
+                CAREER
+              </span>
+            </a>
+          </Link>
+        </Card>
+        <Card
+          className="category-grid__item text-center px-0 py-4"
+          hover={true}
+          href="/category/celebrity"
+          key="CELEBRITY"
+        >
+          <Link
+            className="card card--hover category-grid__item text-center px-0 py-4"
+            to="/category/celebrity"
+          >
+            <a
+              className="card card--hover category-grid__item text-center px-0 py-4"
+              href="/category/celebrity"
+              onClick={[Function]}
+            >
+              <span
+                className="category-grid__icon"
+              >
+                👨‍🎨
+              </span>
+              <br />
+              <span
+                className="category-grid__name"
+              >
+                CELEBRITY
+              </span>
+            </a>
+          </Link>
+        </Card>
+        <Card
+          className="category-grid__item text-center px-0 py-4"
+          hover={true}
+          href="/category/dev"
+          key="DEV"
+        >
+          <Link
+            className="card card--hover category-grid__item text-center px-0 py-4"
+            to="/category/dev"
+          >
+            <a
+              className="card card--hover category-grid__item text-center px-0 py-4"
+              href="/category/dev"
+              onClick={[Function]}
+            >
+              <span
+                className="category-grid__icon"
+              >
+                🤓
+              </span>
+              <br />
+              <span
+                className="category-grid__name"
+              >
+                DEV
+              </span>
+            </a>
+          </Link>
+        </Card>
+        <Card
+          className="category-grid__item text-center px-0 py-4"
+          hover={true}
+          href="/category/explicit"
+          key="EXPLICIT"
+        >
+          <Link
+            className="card card--hover category-grid__item text-center px-0 py-4"
+            to="/category/explicit"
+          >
+            <a
+              className="card card--hover category-grid__item text-center px-0 py-4"
+              href="/category/explicit"
+              onClick={[Function]}
+            >
+              <span
+                className="category-grid__icon"
+              >
+                🔞
+              </span>
+              <br />
+              <span
+                className="category-grid__name"
+              >
+                EXPLICIT
+              </span>
+            </a>
+          </Link>
+        </Card>
+        <Card
+          className="category-grid__item text-center px-0 py-4"
+          hover={true}
+          href="/category/fashion"
+          key="FASHION"
+        >
+          <Link
+            className="card card--hover category-grid__item text-center px-0 py-4"
+            to="/category/fashion"
+          >
+            <a
+              className="card card--hover category-grid__item text-center px-0 py-4"
+              href="/category/fashion"
+              onClick={[Function]}
+            >
+              <span
+                className="category-grid__icon"
+              >
+                👗
+              </span>
+              <br />
+              <span
+                className="category-grid__name"
+              >
+                FASHION
+              </span>
+            </a>
+          </Link>
+        </Card>
+        <Card
+          className="category-grid__item text-center px-0 py-4"
+          hover={true}
+          href="/category/food"
+          key="FOOD"
+        >
+          <Link
+            className="card card--hover category-grid__item text-center px-0 py-4"
+            to="/category/food"
+          >
+            <a
+              className="card card--hover category-grid__item text-center px-0 py-4"
+              href="/category/food"
+              onClick={[Function]}
+            >
+              <span
+                className="category-grid__icon"
+              >
+                🍕
+              </span>
+              <br />
+              <span
+                className="category-grid__name"
+              >
+                FOOD
+              </span>
+            </a>
+          </Link>
+        </Card>
+        <Card
+          className="category-grid__item text-center px-0 py-4"
+          hover={true}
+          href="/category/history"
+          key="HISTORY"
+        >
+          <Link
+            className="card card--hover category-grid__item text-center px-0 py-4"
+            to="/category/history"
+          >
+            <a
+              className="card card--hover category-grid__item text-center px-0 py-4"
+              href="/category/history"
+              onClick={[Function]}
+            >
+              <span
+                className="category-grid__icon"
+              >
+                📜
+              </span>
+              <br />
+              <span
+                className="category-grid__name"
+              >
+                HISTORY
+              </span>
+            </a>
+          </Link>
+        </Card>
+        <Card
+          className="category-grid__item text-center px-0 py-4"
+          hover={true}
+          href="/category/money"
+          key="MONEY"
+        >
+          <Link
+            className="card card--hover category-grid__item text-center px-0 py-4"
+            to="/category/money"
+          >
+            <a
+              className="card card--hover category-grid__item text-center px-0 py-4"
+              href="/category/money"
+              onClick={[Function]}
+            >
+              <span
+                className="category-grid__icon"
+              >
+                💸
+              </span>
+              <br />
+              <span
+                className="category-grid__name"
+              >
+                MONEY
+              </span>
+            </a>
+          </Link>
+        </Card>
+        <Card
+          className="category-grid__item text-center px-0 py-4"
+          hover={true}
+          href="/category/movie"
+          key="MOVIE"
+        >
+          <Link
+            className="card card--hover category-grid__item text-center px-0 py-4"
+            to="/category/movie"
+          >
+            <a
+              className="card card--hover category-grid__item text-center px-0 py-4"
+              href="/category/movie"
+              onClick={[Function]}
+            >
+              <span
+                className="category-grid__icon"
+              >
+                🎥
+              </span>
+              <br />
+              <span
+                className="category-grid__name"
+              >
+                MOVIE
+              </span>
+            </a>
+          </Link>
+        </Card>
+        <Card
+          className="category-grid__item text-center px-0 py-4"
+          hover={true}
+          href="/category/music"
+          key="MUSIC"
+        >
+          <Link
+            className="card card--hover category-grid__item text-center px-0 py-4"
+            to="/category/music"
+          >
+            <a
+              className="card card--hover category-grid__item text-center px-0 py-4"
+              href="/category/music"
+              onClick={[Function]}
+            >
+              <span
+                className="category-grid__icon"
+              >
+                🎵
+              </span>
+              <br />
+              <span
+                className="category-grid__name"
+              >
+                MUSIC
+              </span>
+            </a>
+          </Link>
+        </Card>
+        <Card
+          className="category-grid__item text-center px-0 py-4"
+          hover={true}
+          href="/category/political"
+          key="POLITICAL"
+        >
+          <Link
+            className="card card--hover category-grid__item text-center px-0 py-4"
+            to="/category/political"
+          >
+            <a
+              className="card card--hover category-grid__item text-center px-0 py-4"
+              href="/category/political"
+              onClick={[Function]}
+            >
+              <span
+                className="category-grid__icon"
+              >
+                ⚖️
+              </span>
+              <br />
+              <span
+                className="category-grid__name"
+              >
+                POLITICAL
+              </span>
+            </a>
+          </Link>
+        </Card>
+        <Card
+          className="category-grid__item text-center px-0 py-4"
+          hover={true}
+          href="/category/religion"
+          key="RELIGION"
+        >
+          <Link
+            className="card card--hover category-grid__item text-center px-0 py-4"
+            to="/category/religion"
+          >
+            <a
+              className="card card--hover category-grid__item text-center px-0 py-4"
+              href="/category/religion"
+              onClick={[Function]}
+            >
+              <span
+                className="category-grid__icon"
+              >
+                ⛪
+              </span>
+              <br />
+              <span
+                className="category-grid__name"
+              >
+                RELIGION
+              </span>
+            </a>
+          </Link>
+        </Card>
+        <Card
+          className="category-grid__item text-center px-0 py-4"
+          hover={true}
+          href="/category/science"
+          key="SCIENCE"
+        >
+          <Link
+            className="card card--hover category-grid__item text-center px-0 py-4"
+            to="/category/science"
+          >
+            <a
+              className="card card--hover category-grid__item text-center px-0 py-4"
+              href="/category/science"
+              onClick={[Function]}
+            >
+              <span
+                className="category-grid__icon"
+              >
+                🔬
+              </span>
+              <br />
+              <span
+                className="category-grid__name"
+              >
+                SCIENCE
+              </span>
+            </a>
+          </Link>
+        </Card>
+        <Card
+          className="category-grid__item text-center px-0 py-4"
+          hover={true}
+          href="/category/sport"
+          key="SPORT"
+        >
+          <Link
+            className="card card--hover category-grid__item text-center px-0 py-4"
+            to="/category/sport"
+          >
+            <a
+              className="card card--hover category-grid__item text-center px-0 py-4"
+              href="/category/sport"
+              onClick={[Function]}
+            >
+              <span
+                className="category-grid__icon"
+              >
+                🚴
+              </span>
+              <br />
+              <span
+                className="category-grid__name"
+              >
+                SPORT
+              </span>
+            </a>
+          </Link>
+        </Card>
+        <Card
+          className="category-grid__item text-center px-0 py-4"
+          hover={true}
+          href="/category/travel"
+          key="TRAVEL"
+        >
+          <Link
+            className="card card--hover category-grid__item text-center px-0 py-4"
+            to="/category/travel"
+          >
+            <a
+              className="card card--hover category-grid__item text-center px-0 py-4"
+              href="/category/travel"
+              onClick={[Function]}
+            >
+              <span
+                className="category-grid__icon"
+              >
+                🧳
+              </span>
+              <br />
+              <span
+                className="category-grid__name"
+              >
+                TRAVEL
+              </span>
+            </a>
+          </Link>
+        </Card>
+      </div>
+    </Grid>
+  </div>
 </CategoryGrid>
 `;

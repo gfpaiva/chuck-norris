@@ -12,39 +12,28 @@ import getCategories from '../../../__mocks__/getCategories';
 
 describe('<CategoryGrid />', () => {
   it('should mount properly', async () => {
-    fetch
-      .once(JSON.stringify(getCategories));
-
     const wrapper = mount(
       <Provider store={store}>
         <Router>
-          <CategoryGrid />
+          <CategoryGrid categories={getCategories} />
         </Router>
       </Provider>
     );
-
-    await wait();
-    wrapper.update();
 
     expect(wrapper.find('CategoryGrid')).toMatchSnapshot();
   });
 
   it('should active category card with className', async () => {
-    fetch
-      .once(JSON.stringify(getCategories));
-
     const wrapper = mount(
       <Provider store={store}>
         <Router>
-          <CategoryGrid active="dev" />
+          <CategoryGrid
+            categories={getCategories}
+            active="dev"
+          />
         </Router>
       </Provider>
     );
-
-    await wait();
-    wrapper.update();
-
-    console.log('TCL: wrapper', wrapper.debug());
 
     expect(wrapper.find('.card.category-grid__item--active')).toHaveLength(1);
     expect(wrapper.find('.card.category-grid__item--active .category-grid__name').text()).toBe('DEV');

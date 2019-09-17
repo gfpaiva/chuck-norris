@@ -82,4 +82,12 @@ const Categories = {
 };
 
 export default Categories;
-export const getCategory = category => Categories[category];
+export const getCategory = (category) => {
+  if (Categories[category]) return Categories[category];
+
+  return {
+    icon: '',
+    content: category.toLocaleUpperCase(),
+    link: `/${category}`,
+  };
+};

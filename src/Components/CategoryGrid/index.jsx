@@ -16,7 +16,7 @@ function CategoryGrid({ active, categories }) {
         <Grid>
             {
               categories.map((category) => {
-                const detailCategory = getCategory(category) ? getCategory(category) : { icon: '', link: `/${category}`, content: category.toUpperCase };
+                const detailCategory = getCategory(category);
 
                 const { icon, content, link } = detailCategory;
 
@@ -49,6 +49,9 @@ CategoryGrid.propTypes = {
   categories: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
-const mapStateToProps = ({ categories: { categories } }) => ({ categories });
+const mapStateToProps = (
+  { categories: { categories } },
+  { categories: ownCategories },
+) => ({ categories: ownCategories || categories });
 
 export default connect(mapStateToProps)(CategoryGrid);

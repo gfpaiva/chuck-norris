@@ -8,14 +8,14 @@ import store from '../../Store';
 
 import Fact from './index';
 
-import getCategories from '../../../__mocks__/getCategories';
 import { getJoke, getOtherJoke } from '../../../__mocks__/getJoke';
+
+window.scrollTo = jest.fn();
 
 describe('<Fact />', () => {
   it('should mount properly', async () => {
     fetch
       .once(JSON.stringify(getJoke))
-      .once(JSON.stringify(getCategories));
 
     const wrapper = mount(
       <Provider store={store}>
@@ -37,7 +37,6 @@ describe('<Fact />', () => {
   it('should handle with refresh joke', async () => {
     fetch
       .once(JSON.stringify(getJoke))
-      .once(JSON.stringify(getCategories))
       .once(JSON.stringify(getOtherJoke));
 
     const wrapper = mount(
