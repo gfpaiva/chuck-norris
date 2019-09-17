@@ -12,12 +12,12 @@ import Routes from '../../Utils/Routes';
 
 import './App.scss';
 
-function App({ loading, loadCategoriesRequest }) {
+function App({ categories, loading, loadCategoriesRequest }) {
   useEffect(() => {
     loadCategoriesRequest();
   }, []);
 
-  if (loading) {
+  if (!categories.length && loading) {
     return (
       <div className="app__loading full full--centered">
         <Spinner name="ball-pulse-sync" />
@@ -41,10 +41,11 @@ function App({ loading, loadCategoriesRequest }) {
 
 App.propTypes = {
   loading: PropTypes.bool.isRequired,
+  categories: PropTypes.arrayOf(PropTypes.string).isRequired,
   loadCategoriesRequest: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = ({ categories }) => ({ loading: categories.loading });
+const mapStateToProps = ({ app: { loading }, categories: { categories } }) => ({ loading, categories });
 const mapDispatchToProps = dispatch => bindActionCreators(CategoriesActions, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

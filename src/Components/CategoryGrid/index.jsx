@@ -12,7 +12,7 @@ import './CategoryGrid.scss';
 function CategoryGrid({ active, categories }) {
   return (
     <div className="category-grid">
-      {categories && !!categories.length && (
+      {categories && Boolean(categories.length) && (
         <Grid>
             {
               categories.map((category) => {

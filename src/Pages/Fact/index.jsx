@@ -17,8 +17,14 @@ import './Fact.scss';
 
 let detailCategory;
 
-function Fact({ match: { params: { category } }, loadFactsRequest, facts }) {
-  const { fact, loading, error } = facts;
+function Fact({
+  match: { params: { category } },
+  loadFactsRequest,
+  factsClear,
+  facts,
+  loading,
+}) {
+  const { fact, error } = facts;
 
   const handleRefresh = (e) => {
     e.preventDefault();
@@ -30,6 +36,8 @@ function Fact({ match: { params: { category } }, loadFactsRequest, facts }) {
     detailCategory = getCategory(category) ? getCategory(category) : { content: category, icon: '' };
     window.scrollTo(0, 0);
   }, [category]);
+
+  useEffect(() => () => factsClear(), []);
 
   return (
     <div className="fact">
@@ -62,7 +70,7 @@ function Fact({ match: { params: { category } }, loadFactsRequest, facts }) {
         </div>
       )}
 
-      {!!fact && (
+      {Boolean(fact) && (
         <Card className={`fact__card animated faster ${loading ? 'zoomOut' : 'zoomIn'}`}>
           <div className="fact__card-content">
 
@@ -100,14 +108,15 @@ Fact.propTypes = {
     }).isRequired,
   }).isRequired,
   loadFactsRequest: PropTypes.func.isRequired,
+  factsClear: PropTypes.func.isRequired,
   facts: PropTypes.shape({
     fact: PropTypes.string,
-    loading: PropTypes.bool,
     error: PropTypes.bool,
   }).isRequired,
+  loading: PropTypes.bool.isRequired,
 };
 
-const mapStateToProps = ({ facts }) => ({ facts });
+const mapStateToProps = ({ app: { loading }, facts }) => ({ facts, loading });
 const mapDispatchToProps = dispatch => bindActionCreators(FactsActions, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Fact);
