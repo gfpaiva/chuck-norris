@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Footer() {
+function Footer() {
   return (
     <footer className="footer text-center">
       <p>
@@ -19,3 +19,5 @@ export default function Footer() {
     </footer>
   );
 }
+
+export default React.memo(Footer);

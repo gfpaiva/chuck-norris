@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function NotFound() {
+function NotFound() {
   return (
     <h3 className="text-center">
       Página não encontrada
@@ -10,3 +10,5 @@ export default function NotFound() {
     </h3>
   );
 }
+
+export default React.memo(NotFound);

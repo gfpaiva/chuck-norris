@@ -3,6 +3,27 @@
 exports[`<CategoryGrid /> should mount properly 1`] = `
 <CategoryGrid
   active=""
+  categories={
+    Array [
+      "animal",
+      "career",
+      "celebrity",
+      "dev",
+      "explicit",
+      "fashion",
+      "food",
+      "history",
+      "money",
+      "movie",
+      "music",
+      "political",
+      "religion",
+      "science",
+      "sport",
+      "travel",
+    ]
+  }
+  dispatch={[Function]}
 >
   <div
     className="category-grid"

@@ -1,49 +1,42 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Spinner from 'react-spinkit';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { Link } from 'react-router-dom';
 import { FaArrowLeft, FaUndo } from 'react-icons/fa';
+
+import FactsActions from '../../Store/facts/actions';
 
 import Card from '../../Components/Card';
 import CategoryGrid from '../../Components/CategoryGrid';
 
-import { getJoke } from '../../Utils/API';
 import { getCategory } from '../../Utils/Categories';
 
 import './Fact.scss';
 
-let detailCategory;
+function Fact({
+  match: { params: { category } },
+  loadFactsRequest,
+  factsClear,
+  facts,
+  loading,
+}) {
+  let detailCategory = getCategory(category);
+  const { fact, error } = facts;
 
-export default function Fact({ match: { params: { category } } }) {
-  const [fact, setFact] = useState('');
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
-  const fetchJoke = async () => {
-    setLoading(true);
-
-    try {
-      const { value } = await getJoke(category);
-
-      setFact(value);
-    } catch {
-      setError(true);
-
-      throw new Error('Error on fetch categories');
-    } finally {
-      setLoading(false);
-    }
-  };
   const handleRefresh = (e) => {
     e.preventDefault();
-    fetchJoke();
+    loadFactsRequest(category);
   };
 
   useEffect(() => {
-    setError(false);
-    detailCategory = getCategory(category) ? getCategory(category) : { content: category, icon: '' };
-    fetchJoke();
+    loadFactsRequest(category);
+    detailCategory = getCategory(category);
     window.scrollTo(0, 0);
   }, [category]);
+
+  useEffect(() => () => factsClear(), []);
 
   return (
     <div className="fact">
@@ -76,7 +69,7 @@ export default function Fact({ match: { params: { category } } }) {
         </div>
       )}
 
-      {!!fact && (
+      {Boolean(fact) && (
         <Card className={`fact__card animated faster ${loading ? 'zoomOut' : 'zoomIn'}`}>
           <div className="fact__card-content">
 
@@ -113,4 +106,16 @@ Fact.propTypes = {
       category: PropTypes.string.isRequired,
     }).isRequired,
   }).isRequired,
+  loadFactsRequest: PropTypes.func.isRequired,
+  factsClear: PropTypes.func.isRequired,
+  facts: PropTypes.shape({
+    fact: PropTypes.string,
+    error: PropTypes.bool,
+  }).isRequired,
+  loading: PropTypes.bool.isRequired,
 };
+
+const mapStateToProps = ({ app: { loading }, facts }) => ({ facts, loading });
+const mapDispatchToProps = dispatch => bindActionCreators(FactsActions, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(Fact);

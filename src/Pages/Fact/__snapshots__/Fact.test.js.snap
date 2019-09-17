@@ -2,6 +2,17 @@
 
 exports[`<Fact /> should mount properly 1`] = `
 <Fact
+  facts={
+    Object {
+      "error": false,
+      "fact": "",
+    }
+  }
+  factsClear={[Function]}
+  loadFactsFail={[Function]}
+  loadFactsRequest={[Function]}
+  loadFactsSuccess={[Function]}
+  loading={true}
   match={
     Object {
       "params": Object {
@@ -53,6 +64,14 @@ exports[`<Fact /> should mount properly 1`] = `
         </FaArrowLeft>
       </a>
     </Link>
+    <p>
+      <strong>
+        🤓
+         
+        DEV
+      </strong>
+        - Chuck Norris Fact:
+    </p>
     <div
       className="text-center"
     >
@@ -85,13 +104,19 @@ exports[`<Fact /> should mount properly 1`] = `
       >
         Navegue por outra categoria: 
       </p>
-      <CategoryGrid
+      <Connect(CategoryGrid)
         active="dev"
       >
-        <div
-          className="category-grid"
-        />
-      </CategoryGrid>
+        <CategoryGrid
+          active="dev"
+          categories={Array []}
+          dispatch={[Function]}
+        >
+          <div
+            className="category-grid"
+          />
+        </CategoryGrid>
+      </Connect(CategoryGrid)>
     </div>
   </div>
 </Fact>

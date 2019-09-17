@@ -26,8 +26,6 @@ exports[`<Home /> should mount properly 1`] = `
       Selecione uma das categorias abaixo para "Chuck Facts"
     </p>
   </div>
-  <CategoryGrid
-    active=""
-  />
+  <Connect(CategoryGrid) />
 </div>
 `;

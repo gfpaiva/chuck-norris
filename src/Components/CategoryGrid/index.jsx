@@ -1,24 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 import Card from '../Card';
 import Grid from '../Grid';
 
 import { getCategory } from '../../Utils/Categories';
-import { useAppContext } from '../../Providers/App.Context';
 
 import './CategoryGrid.scss';
 
-export default function CategoryGrid({ active }) {
-  const { categories } = useAppContext();
-
+function CategoryGrid({ active, categories }) {
   return (
     <div className="category-grid">
-      {categories && !!categories.length && (
+      {categories && Boolean(categories.length) && (
         <Grid>
             {
               categories.map((category) => {
-                const detailCategory = getCategory(category) ? getCategory(category) : { icon: '', link: `/${category}`, content: category.toUpperCase };
+                const detailCategory = getCategory(category);
 
                 const { icon, content, link } = detailCategory;
 
@@ -48,4 +46,12 @@ CategoryGrid.defaultProps = {
 
 CategoryGrid.propTypes = {
   active: PropTypes.string,
+  categories: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
+
+const mapStateToProps = (
+  { categories: { categories } },
+  { categories: ownCategories },
+) => ({ categories: ownCategories || categories });
+
+export default connect(mapStateToProps)(CategoryGrid);

@@ -1,18 +1,23 @@
-import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import Spinner from 'react-spinkit';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { Route, Switch } from 'react-router-dom';
+
+import CategoriesActions from '../../Store/categories/actions';
 
 import Footer from '../Footer';
 import Routes from '../../Utils/Routes';
 
-import { useAppContext } from '../../Providers/App.Context';
-
 import './App.scss';
 
-export default function App() {
-  const { loading } = useAppContext();
+function App({ categories, loading, loadCategoriesRequest }) {
+  useEffect(() => {
+    loadCategoriesRequest();
+  }, []);
 
-  if (loading) {
+  if (!categories.length && loading) {
     return (
       <div className="app__loading full full--centered">
         <Spinner name="ball-pulse-sync" />
@@ -33,3 +38,14 @@ export default function App() {
     </main>
   );
 }
+
+App.propTypes = {
+  loading: PropTypes.bool.isRequired,
+  categories: PropTypes.arrayOf(PropTypes.string).isRequired,
+  loadCategoriesRequest: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = ({ app: { loading }, categories: { categories } }) => ({ loading, categories });
+const mapDispatchToProps = dispatch => bindActionCreators(CategoriesActions, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
