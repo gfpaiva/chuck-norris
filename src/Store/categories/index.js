@@ -2,7 +2,7 @@ import { handleActions } from 'redux-actions';
 
 import CategoriesActions from './actions';
 
-const INITIAL_STATE = {
+export const INITIAL_STATE = {
   categories: [],
   error: false,
 };

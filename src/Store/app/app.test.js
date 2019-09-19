@@ -1,4 +1,4 @@
-import reducer from './';
+import reducer, { INITIAL_STATE } from './';
 import AppActions from './actions';
 import SET_LOADING from './constants';
 
@@ -21,9 +21,7 @@ describe('[REDUX] - App', () => {
   });
 
   it('should return initial state', () => {
-    const app = reducer(undefined, {});
-
-    expect(app).toMatchObject({ loading: true });
+    expect(reducer(undefined, {})).toMatchObject(INITIAL_STATE);
   });
 
   it(`should handle ${SET_LOADING}`, () => {
