@@ -19,7 +19,7 @@ describe('[REDUX] - Categories', () => {
     expect(CategoryActions.loadCategoriesRequest()).toMatchObject({ type: LOAD_CATEGORIES_REQUEST });
     expect(CategoryActions.loadCategoriesFail()).toMatchObject({ type: LOAD_CATEGORIES_FAIL });
     expect(CategoryActions.loadCategoriesSuccess()).toMatchObject({ type: LOAD_CATEGORIES_SUCCESS, payload: { data: [] } });
-    expect(CategoryActions.loadCategoriesSuccess(['DATA'])).toMatchObject({ type: LOAD_CATEGORIES_SUCCESS, payload: { data: ['DATA'] } });
+    expect(CategoryActions.loadCategoriesSuccess(getCategoriesMock)).toMatchObject({ type: LOAD_CATEGORIES_SUCCESS, payload: { data: getCategoriesMock } });
   });
 
   it('should return initial state', () => {

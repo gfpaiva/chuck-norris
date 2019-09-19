@@ -2,7 +2,7 @@ import { handleActions } from 'redux-actions';
 
 import FactsActions from './actions';
 
-const INITIAL_STATE = {
+export const INITIAL_STATE = {
   fact: '',
   error: false,
 };
