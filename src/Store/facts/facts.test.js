@@ -24,6 +24,7 @@ describe('[REDUX] - Facts', () => {
     expect(FactsActions.factsClear()).toMatchObject({ type: FACTS_CLEAR });
   });
 
+
   it('should return initial state', () => {
     expect(reducer(undefined, {})).toMatchObject(INITIAL_STATE);
   });
@@ -38,6 +39,7 @@ describe('[REDUX] - Facts', () => {
     expect(reducer({ fact: 'any', error: false }, FactsActions.loadFactsFail())).toMatchObject(shape);
   });
 
+
   it(`should handle ${LOAD_FACTS_SUCCESS}`, () => {
     const shape = {
       fact: 'any',
@@ -45,8 +47,20 @@ describe('[REDUX] - Facts', () => {
     };
 
     expect(reducer(null, FactsActions.loadFactsSuccess('any'))).toMatchObject(shape);
-    expect(reducer({ categories: 'any', error: true }, FactsActions.loadFactsSuccess('any'))).toMatchObject(shape);
+    expect(reducer({ fact: 'any', error: true }, FactsActions.loadFactsSuccess('any'))).toMatchObject(shape);
   });
+
+
+  it(`should handle ${FACTS_CLEAR}`, () => {
+    const shape = {
+      fact: '',
+      error: false,
+    };
+
+    expect(reducer(null, FactsActions.factsClear())).toMatchObject(shape);
+    expect(reducer({ fact: 'any', error: false }, FactsActions.factsClear())).toMatchObject(shape);
+  });
+
 
   it('should handle the saga', () => {
     const category = 'category';
@@ -68,6 +82,7 @@ describe('[REDUX] - Facts', () => {
     // Finish
     expect(generator.next().done).toBeTruthy();
   });
+
 
   it('should fail the saga', () => {
     const category = 'category';
